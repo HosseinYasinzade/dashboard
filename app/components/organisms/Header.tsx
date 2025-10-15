@@ -7,7 +7,7 @@ import User from "@/app/icons/user";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center h-16 px-6 rounded-xl shadow-sm">
+    <header className="flex justify-between items-center h-16 px-6 rounded-xl shadow-sm w-full">
       <Breadcrumb />
       <div className="flex items-center gap-4">
         <SearchBar />
