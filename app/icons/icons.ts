@@ -9,3 +9,8 @@ export { default as Build } from "./build";
 export { default as Person } from "./person";
 export { default as Document } from "./document";
 export { default as Rocket } from "./rocket";
+export { default as Bitcoin } from "./bitcoin";
+export { default as Usdt } from "./usdt";
+export { default as Ton } from "./ton";
+export { default as Pepe } from "./pepe";
+export { default as Ethereum } from "./ethereum";
