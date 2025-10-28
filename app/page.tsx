@@ -3,7 +3,7 @@
 import Sidebar from "./components/organisms/Sidebar";
 import Header from "./components/organisms/Header";
 import StatsRow from "./components/organisms/StatsRow";
-import dynamic from "next/dynamic";
+import CryptoDashboard from "./components/organisms/CryptoDashboard";
 import Charts from "./components/organisms/Charts";
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
         <Header />
         <StatsRow />
         <Charts />
+        <CryptoDashboard />
       </main>
     </div>
   );
