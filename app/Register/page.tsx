@@ -1,8 +1,8 @@
 import Menu from "@/app/components/organisms/Menu";
 import HeroLeft from "@/app/components/molecules/HeroLeft";
-import AuthRight from "@/app/components/molecules/AuthRight";
+import RegisterForm from "@/app/components/molecules/RegisterForm";
 
-export default function Login() {
+export default function Register() {
   return (
     <main className="relative min-h-screen bg-[#0F1535] overflow-hidden">
       <div className="absolute top-0 left-0 w-full  z-20">
@@ -14,7 +14,7 @@ export default function Login() {
       </div>
 
       <div className="absolute top-0 right-0 w-1/2 h-full flex items-center justify-center z-0">
-        <AuthRight />
+        <RegisterForm />
       </div>
     </main>
   );
