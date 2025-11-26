@@ -7,7 +7,7 @@ export default function RegisterForm() {
   const [remember, setRemember] = useState(false);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto text-white mt-20">
+    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto text-white mt-10 sm:mt-14 md:mt-20 px-4">
       <div className="text-center mb-8">
         <h2 className="text-xl font-semibold mb-1">Welcome!</h2>
         <p className="text-xs text-gray-400 leading-relaxed">

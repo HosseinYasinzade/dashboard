@@ -10,7 +10,12 @@ import Person from "@/app/icons/person";
 import Document from "@/app/icons/document";
 import Rocket from "@/app/icons/rocket";
 
-const Sidebar = () => {
+type SidebarProps = {
+  isOpen?: boolean;
+  onClose?: () => void;
+};
+
+const Sidebar = ({ isOpen = true, onClose }: SidebarProps) => {
   const [active, setActive] = useState<string>("Dashboard");
 
   const menuItems = [
@@ -47,11 +52,30 @@ const Sidebar = () => {
     },
   ];
 
+  const handleItemClick = (label: string) => {
+    setActive(label);
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      onClose?.();
+    }
+  };
+
   return (
-    <aside
-      className="w-64 h-screen text-white flex flex-col justify-between p-5
-      bg-gradient-to-b from-[#0f1535] via-[#0b1130] to-[#010416] shadow-2xl"
-    >
+    <>
+      {onClose && (
+        <button
+          type="button"
+          aria-label="Close sidebar"
+          onClick={onClose}
+          className={`fixed inset-0 bg-black/50 z-30 transition-opacity duration-300 ease-in-out md:hidden ${
+            isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        />
+      )}
+      <aside
+        className={`fixed inset-y-0 left-0 z-40 w-64 h-screen text-white flex flex-col justify-between p-5
+        bg-gradient-to-b from-[#0f1535] via-[#0b1130] to-[#010416] shadow-2xl transform transition-transform duration-300 ease-in-out
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} md:static md:flex md:translate-x-0`}
+      >
       <div>
         <div className="flex flex-col items-center mb-10">
           <h1
@@ -71,7 +95,7 @@ const Sidebar = () => {
                 icon={item.icon}
                 label={item.label}
                 isActive={active === item.label}
-                onClick={() => setActive(item.label)}
+                onClick={() => handleItemClick(item.label)}
               />
             ))}
           </div>
@@ -86,7 +110,7 @@ const Sidebar = () => {
                 icon={item.icon}
                 label={item.label}
                 isActive={active === item.label}
-                onClick={() => setActive(item.label)}
+                onClick={() => handleItemClick(item.label)}
               />
             ))}
           </div>
@@ -94,7 +118,8 @@ const Sidebar = () => {
       </div>
 
       <div className="h-6" />
-    </aside>
+      </aside>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroLeft = () => {
   return (
-    <div className="relative flex items-center justify-center w-full h-full rounded-l-2xl overflow-hidden">
+    <div className="relative flex items-center justify-center w-full h-full min-h-[320px] sm:min-h-[420px] rounded-2xl md:rounded-l-2xl md:rounded-r-none overflow-hidden">
       <Image
         src="/images/Hero.png"
         alt="Vision UI Background"
